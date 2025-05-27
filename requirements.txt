@@ -3,3 +3,5 @@ pandas
 joblib
 xhtml2pdf
 gunicorn
+scikit-learn
+
