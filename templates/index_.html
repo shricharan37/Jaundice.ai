@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jaundice.ai - Detection System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 & Poppins font -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0D3B66;
+            --primary-yellow: #F4D35E;
+            --primary-cream: #FAF0CA;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background: var(--primary-cream);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--primary-blue);
+            color: var(--primary-yellow);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 8.5rem;
+            font-weight: 1000;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .hero a.btn {
+            background-color: var(--primary-yellow);
+            color: var(--primary-blue);
+            font-weight: 600;
+            border: none;
+        }
+
+        .hero a.btn:hover {
+            background-color: #e6c63c;
+        }
+
+        .upload-section {
+            padding: 60px 20px;
+            background-color: white;
+        }
+
+        .card {
+            box-shadow: 0 0 15px rgba(0,0,0,0.07);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #092c4f;
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: var(--primary-yellow);
+        }
+
+        label.form-label {
+            font-weight: 500;
+            color: var(--primary-blue);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Jaundice.ai</h1>
+    <a href="#upload" class="btn mt-4">Start Detection</a>
+</div>
+
+<!-- Upload Section -->
+<div id="upload" class="upload-section container">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold" style="color: var(--primary-blue);">Upload Patient Sensor Data</h2>
+        <p class="text-muted">Provide a single CSV or Excel file with the following headers in order: <strong>red, green, blue, temp, pulse</strong></p>
+    </div>
+
+    <div class="card p-4 mx-auto" style="max-width: 600px;">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label">Sensor Data File (.csv, .xlsx, .xls)</label>
+                <input type="file" name="data_file" class="form-control" accept=".csv, .xlsx, .xls" required>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Detect Jaundice</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    Designed and developed by BBIN8_Team12 working under Dr. Udhayakumar's guidance<br>
+    &copy; <a href="https://www.sastra.edu/" target="_blank">SASTRA Deemed University</a>
+</footer>
+
+</body>
+</html>
