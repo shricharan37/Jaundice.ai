@@ -4,4 +4,4 @@ joblib
 xhtml2pdf
 gunicorn
 scikit-learn
-
+openpyxl
